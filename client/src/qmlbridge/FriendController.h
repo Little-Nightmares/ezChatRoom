@@ -1,0 +1,29 @@
+#ifndef FRIENDCONTROLLER_H
+#define FRIENDCONTROLLER_H
+
+#include <QObject>
+
+
+namespace client {
+
+class FriendController : public QObject
+{
+    Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
+public:
+    explicit FriendController(QObject *parent = nullptr);
+    ~FriendController() override;
+
+signals:
+
+public slots:
+
+private:
+
+};
+
+} // namespace client
+
+#endif // FRIENDCONTROLLER_H
