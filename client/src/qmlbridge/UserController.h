@@ -2,6 +2,7 @@
 #define USERCONTROLLER_H
 
 #include <QObject>
+#include <QtQml/qqmlregistration.h>
 
 
 namespace client {

@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QtQml/qqmlregistration.h>
 
 // Bridge 层
 #include "qmlbridge/AppCore.h"

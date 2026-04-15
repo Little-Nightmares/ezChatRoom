@@ -1,4 +1,5 @@
 #include "AppCore.h"
+#include <QtQml/qqmlregistration.h>
 
 namespace client {
 
