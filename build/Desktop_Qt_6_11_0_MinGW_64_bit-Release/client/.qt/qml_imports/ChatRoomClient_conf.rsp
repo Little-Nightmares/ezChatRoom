@@ -1,0 +1,9 @@
+-rootPath
+D:/PROJECT/ChatRoom/client
+-cmake-output
+-output-file
+D:/PROJECT/ChatRoom/build/Desktop_Qt_6_11_0_MinGW_64_bit-Release/client/.qt/qml_imports/ChatRoomClient_conf.cmake
+-importPath
+D:/PROJECT/ChatRoom/build/Desktop_Qt_6_11_0_MinGW_64_bit-Release/client
+-importPath
+C:/Qt/6.11.0/mingw_64/qml
