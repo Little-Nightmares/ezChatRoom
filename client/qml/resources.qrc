@@ -1,0 +1,9 @@
+<RCC version="1.0">
+    <qresource>
+        <file>images/logo2.png</file>
+        <file>images/zmd2.jpg</file>
+    </qresource>
+</RCC>
+<RCC>
+    <qresource prefix="/"/>
+</RCC>

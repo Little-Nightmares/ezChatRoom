@@ -22,5 +22,7 @@
         <file>qml/dialogs/GroupChatDialog.qml</file>
         <file>qml/dialogs/FileTransferDialog.qml</file>
         <file>qml/dialogs/ConfirmDialog.qml</file>
+        <file>qml/images/logo2.png</file>
+        <file>qml/images/zmd2.jpg</file>
     </qresource>
 </RCC>
