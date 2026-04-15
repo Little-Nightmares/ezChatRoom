@@ -69,7 +69,7 @@ client/CMakeFiles/ChatRoomClient_autogen: client/ChatRoomClient_autogen/timestam
 
 client/ChatRoomClient_autogen/timestamp: C:/Qt/6.11.0/mingw_64/bin/moc.exe
 client/ChatRoomClient_autogen/timestamp: client/CMakeFiles/ChatRoomClient_autogen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target ChatRoomClient"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target ChatRoomClient"
 	cd /d D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/PROJECT/ChatRoom/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/client/CMakeFiles/ChatRoomClient_autogen.dir/AutogenInfo.json Debug
 	cd /d D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client && C:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/PROJECT/ChatRoom/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/client/ChatRoomClient_autogen/timestamp
 

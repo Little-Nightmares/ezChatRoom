@@ -9,8 +9,6 @@ namespace client {
 class NotificationController : public QObject
 {
     Q_OBJECT
-    QML_ELEMENT
-    QML_SINGLETON
 
 public:
     explicit NotificationController(QObject *parent = nullptr);

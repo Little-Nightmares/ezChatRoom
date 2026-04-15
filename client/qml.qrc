@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/pages/LoginPage.qml</file>
+        <file>qml/pages/RegisterPage.qml</file>
+        <file>qml/pages/ChatPage.qml</file>
+        <file>qml/pages/FriendRequestPage.qml</file>
+        <file>qml/pages/ProfilePage.qml</file>
+        <file>qml/pages/GroupChatCreatePage.qml</file>
+        <file>qml/pages/SettingsPage.qml</file>
+        <file>qml/components/MessageBubble.qml</file>
+        <file>qml/components/ContactItem.qml</file>
+        <file>qml/components/ConversationItem.qml</file>
+        <file>qml/components/InputBar.qml</file>
+        <file>qml/components/Avatar.qml</file>
+        <file>qml/components/SearchBar.qml</file>
+        <file>qml/components/TabBar.qml</file>
+        <file>qml/components/Toast.qml</file>
+        <file>qml/components/DialogHelper.qml</file>
+        <file>qml/components/ImagePreviewer.qml</file>
+        <file>qml/dialogs/AddFriendDialog.qml</file>
+        <file>qml/dialogs/GroupChatDialog.qml</file>
+        <file>qml/dialogs/FileTransferDialog.qml</file>
+        <file>qml/dialogs/ConfirmDialog.qml</file>
+    </qresource>
+</RCC>

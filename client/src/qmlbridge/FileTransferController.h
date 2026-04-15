@@ -9,8 +9,6 @@ namespace client {
 class FileTransferController : public QObject
 {
     Q_OBJECT
-    QML_ELEMENT
-    QML_SINGLETON
 
 public:
     explicit FileTransferController(QObject *parent = nullptr);

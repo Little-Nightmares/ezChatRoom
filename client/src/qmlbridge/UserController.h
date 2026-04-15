@@ -9,8 +9,6 @@ namespace client {
 class UserController : public QObject
 {
     Q_OBJECT
-    QML_ELEMENT
-    QML_SINGLETON
 
 public:
     explicit UserController(QObject *parent = nullptr);

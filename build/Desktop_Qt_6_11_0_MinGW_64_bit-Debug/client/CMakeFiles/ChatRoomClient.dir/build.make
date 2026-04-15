@@ -70,38 +70,38 @@ include client/CMakeFiles/ChatRoomClient.dir/flags.make
 
 client/ChatRoomClient_autogen/timestamp: C:/Qt/6.11.0/mingw_64/bin/moc.exe
 client/ChatRoomClient_autogen/timestamp: client/CMakeFiles/ChatRoomClient.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target ChatRoomClient"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target ChatRoomClient"
 	cd /d D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autogen D:/PROJECT/ChatRoom/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/client/CMakeFiles/ChatRoomClient_autogen.dir/AutogenInfo.json Debug
 	cd /d D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client && C:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/PROJECT/ChatRoom/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/client/ChatRoomClient_autogen/timestamp
 
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/resources/qml.qrc
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: client/CMakeFiles/ChatRoomClient_autogen.dir/AutoRcc_qml_3YJK5W5UP7_Info.json
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/main.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/pages/GroupChatCreatePage.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/pages/RegisterPage.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/pages/ChatPage.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/pages/ProfilePage.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/pages/LoginPage.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/pages/FriendRequestPage.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/pages/SettingsPage.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/dialogs/GroupChatDialog.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/dialogs/AddFriendDialog.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/dialogs/FileTransferDialog.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/dialogs/ConfirmDialog.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/MessageBubble.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/Toast.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/ImagePreviewer.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/ContactItem.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/SearchBar.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/InputBar.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/Avatar.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/ConversationItem.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/TabBar.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/DialogHelper.qml
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: C:/Qt/6.11.0/mingw_64/bin/rcc.exe
-client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp: C:/Qt/6.11.0/mingw_64/bin/rcc.exe
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for resources/qml.qrc"
-	cd /d D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autorcc D:/PROJECT/ChatRoom/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/client/CMakeFiles/ChatRoomClient_autogen.dir/AutoRcc_qml_3YJK5W5UP7_Info.json Debug
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml.qrc
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: client/CMakeFiles/ChatRoomClient_autogen.dir/AutoRcc_qml_EWIEGA46WW_Info.json
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/main.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/pages/GroupChatCreatePage.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/pages/RegisterPage.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/pages/ChatPage.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/pages/ProfilePage.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/pages/LoginPage.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/pages/FriendRequestPage.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/pages/SettingsPage.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/dialogs/GroupChatDialog.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/dialogs/AddFriendDialog.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/dialogs/FileTransferDialog.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/dialogs/ConfirmDialog.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/MessageBubble.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/Toast.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/ImagePreviewer.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/ContactItem.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/SearchBar.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/InputBar.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/Avatar.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/ConversationItem.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/TabBar.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: D:/PROJECT/ChatRoom/client/qml/components/DialogHelper.qml
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: C:/Qt/6.11.0/mingw_64/bin/rcc.exe
+client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp: C:/Qt/6.11.0/mingw_64/bin/rcc.exe
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for qml.qrc"
+	cd /d D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client && C:\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autorcc D:/PROJECT/ChatRoom/build/Desktop_Qt_6_11_0_MinGW_64_bit-Debug/client/CMakeFiles/ChatRoomClient_autogen.dir/AutoRcc_qml_EWIEGA46WW_Info.json Debug
 
 client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/mocs_compilation.cpp.obj: client/CMakeFiles/ChatRoomClient.dir/flags.make
 client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/mocs_compilation.cpp.obj: client/CMakeFiles/ChatRoomClient.dir/includes_CXX.rsp
@@ -523,20 +523,20 @@ client/CMakeFiles/ChatRoomClient.dir/src/qmlbridge/NotificationController.cpp.s:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatRoomClient.dir/src/qmlbridge/NotificationController.cpp.s"
 	cd /d D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client && C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\PROJECT\ChatRoom\client\src\qmlbridge\NotificationController.cpp -o CMakeFiles\ChatRoomClient.dir\src\qmlbridge\NotificationController.cpp.s
 
-client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp.obj: client/CMakeFiles/ChatRoomClient.dir/flags.make
-client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp.obj: client/CMakeFiles/ChatRoomClient.dir/includes_CXX.rsp
-client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp.obj: client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp
-client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp.obj: client/CMakeFiles/ChatRoomClient.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp.obj"
-	cd /d D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client && C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp.obj -MF CMakeFiles\ChatRoomClient.dir\ChatRoomClient_autogen\3YJK5W5UP7\qrc_qml.cpp.obj.d -o CMakeFiles\ChatRoomClient.dir\ChatRoomClient_autogen\3YJK5W5UP7\qrc_qml.cpp.obj -c D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client\ChatRoomClient_autogen\3YJK5W5UP7\qrc_qml.cpp
+client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp.obj: client/CMakeFiles/ChatRoomClient.dir/flags.make
+client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp.obj: client/CMakeFiles/ChatRoomClient.dir/includes_CXX.rsp
+client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp.obj: client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp
+client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp.obj: client/CMakeFiles/ChatRoomClient.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp.obj"
+	cd /d D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client && C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp.obj -MF CMakeFiles\ChatRoomClient.dir\ChatRoomClient_autogen\EWIEGA46WW\qrc_qml.cpp.obj.d -o CMakeFiles\ChatRoomClient.dir\ChatRoomClient_autogen\EWIEGA46WW\qrc_qml.cpp.obj -c D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client\ChatRoomClient_autogen\EWIEGA46WW\qrc_qml.cpp
 
-client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp.i"
-	cd /d D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client && C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client\ChatRoomClient_autogen\3YJK5W5UP7\qrc_qml.cpp > CMakeFiles\ChatRoomClient.dir\ChatRoomClient_autogen\3YJK5W5UP7\qrc_qml.cpp.i
+client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp.i"
+	cd /d D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client && C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client\ChatRoomClient_autogen\EWIEGA46WW\qrc_qml.cpp > CMakeFiles\ChatRoomClient.dir\ChatRoomClient_autogen\EWIEGA46WW\qrc_qml.cpp.i
 
-client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp.s"
-	cd /d D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client && C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client\ChatRoomClient_autogen\3YJK5W5UP7\qrc_qml.cpp -o CMakeFiles\ChatRoomClient.dir\ChatRoomClient_autogen\3YJK5W5UP7\qrc_qml.cpp.s
+client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp.s"
+	cd /d D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client && C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client\ChatRoomClient_autogen\EWIEGA46WW\qrc_qml.cpp -o CMakeFiles\ChatRoomClient.dir\ChatRoomClient_autogen\EWIEGA46WW\qrc_qml.cpp.s
 
 # Object files for target ChatRoomClient
 ChatRoomClient_OBJECTS = \
@@ -568,7 +568,7 @@ ChatRoomClient_OBJECTS = \
 "CMakeFiles/ChatRoomClient.dir/src/qmlbridge/FriendController.cpp.obj" \
 "CMakeFiles/ChatRoomClient.dir/src/qmlbridge/FileTransferController.cpp.obj" \
 "CMakeFiles/ChatRoomClient.dir/src/qmlbridge/NotificationController.cpp.obj" \
-"CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp.obj"
+"CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp.obj"
 
 # External object files for target ChatRoomClient
 ChatRoomClient_EXTERNAL_OBJECTS =
@@ -601,7 +601,7 @@ client/ChatRoomClient.exe: client/CMakeFiles/ChatRoomClient.dir/src/qmlbridge/Us
 client/ChatRoomClient.exe: client/CMakeFiles/ChatRoomClient.dir/src/qmlbridge/FriendController.cpp.obj
 client/ChatRoomClient.exe: client/CMakeFiles/ChatRoomClient.dir/src/qmlbridge/FileTransferController.cpp.obj
 client/ChatRoomClient.exe: client/CMakeFiles/ChatRoomClient.dir/src/qmlbridge/NotificationController.cpp.obj
-client/ChatRoomClient.exe: client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp.obj
+client/ChatRoomClient.exe: client/CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp.obj
 client/ChatRoomClient.exe: client/CMakeFiles/ChatRoomClient.dir/build.make
 client/ChatRoomClient.exe: C:/Qt/6.11.0/mingw_64/lib/libQt6Quick.a
 client/ChatRoomClient.exe: C:/Qt/6.11.0/mingw_64/lib/libQt6Sql.a
@@ -624,7 +624,7 @@ client/CMakeFiles/ChatRoomClient.dir/clean:
 	cd /d D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client && $(CMAKE_COMMAND) -P CMakeFiles\ChatRoomClient.dir\cmake_clean.cmake
 .PHONY : client/CMakeFiles/ChatRoomClient.dir/clean
 
-client/CMakeFiles/ChatRoomClient.dir/depend: client/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp
+client/CMakeFiles/ChatRoomClient.dir/depend: client/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp
 client/CMakeFiles/ChatRoomClient.dir/depend: client/ChatRoomClient_autogen/timestamp
 	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\PROJECT\ChatRoom D:\PROJECT\ChatRoom\client D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client D:\PROJECT\ChatRoom\build\Desktop_Qt_6_11_0_MinGW_64_bit-Debug\client\CMakeFiles\ChatRoomClient.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : client/CMakeFiles/ChatRoomClient.dir/depend

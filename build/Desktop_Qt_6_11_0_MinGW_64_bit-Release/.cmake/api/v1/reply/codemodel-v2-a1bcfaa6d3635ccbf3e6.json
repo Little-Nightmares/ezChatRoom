@@ -1,0 +1,146 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "client",
+					"jsonFile" : "directory-client-Release-3c37cf1077c78f229df7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "client",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				},
+				{
+					"build" : "server",
+					"jsonFile" : "directory-server-Release-ca16530337ce509e32d1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "server",
+					"targetIndexes" : 
+					[
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "ChatRoom",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "ChatRoomClient::@b0c487aac068df482bf0",
+					"jsonFile" : "target-ChatRoomClient-Release-c0e89350210330276820.json",
+					"name" : "ChatRoomClient",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ChatRoomClient_autogen::@b0c487aac068df482bf0",
+					"jsonFile" : "target-ChatRoomClient_autogen-Release-ed0f20a50e6821757f7f.json",
+					"name" : "ChatRoomClient_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ChatRoomClient_autogen_timestamp_deps::@b0c487aac068df482bf0",
+					"jsonFile" : "target-ChatRoomClient_autogen_timestamp_deps-Release-1ee09c3d87938c4825ba.json",
+					"name" : "ChatRoomClient_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ChatRoomClient_qmlimportscan::@b0c487aac068df482bf0",
+					"jsonFile" : "target-ChatRoomClient_qmlimportscan-Release-c44812e4c8aed984724a.json",
+					"name" : "ChatRoomClient_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ChatRoomServer::@d19778d2e34a1e3ddfc0",
+					"jsonFile" : "target-ChatRoomServer-Release-1290d94689a81a43410d.json",
+					"name" : "ChatRoomServer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ChatRoomServer_autogen::@d19778d2e34a1e3ddfc0",
+					"jsonFile" : "target-ChatRoomServer_autogen-Release-9ea4b9c4fcaf1a839b57.json",
+					"name" : "ChatRoomServer_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ChatRoomServer_autogen_timestamp_deps::@d19778d2e34a1e3ddfc0",
+					"jsonFile" : "target-ChatRoomServer_autogen_timestamp_deps-Release-f385fe4935885c7eaa57.json",
+					"name" : "ChatRoomServer_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/PROJECT/ChatRoom/build/Desktop_Qt_6_11_0_MinGW_64_bit-Release",
+		"source" : "D:/PROJECT/ChatRoom"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

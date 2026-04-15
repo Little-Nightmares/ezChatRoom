@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp.obj"
-  "CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp.obj.d"
+  "CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp.obj"
+  "CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp.obj.d"
   "CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/mocs_compilation.cpp.obj"
   "CMakeFiles/ChatRoomClient.dir/ChatRoomClient_autogen/mocs_compilation.cpp.obj.d"
   "CMakeFiles/ChatRoomClient.dir/src/core/AppManager.cpp.obj"
@@ -60,7 +60,7 @@ file(REMOVE_RECURSE
   "ChatRoomClient.exe"
   "ChatRoomClient.exe.manifest"
   "ChatRoomClient.pdb"
-  "ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp"
+  "ChatRoomClient_autogen/EWIEGA46WW/qrc_qml.cpp"
   "ChatRoomClient_autogen/mocs_compilation.cpp"
   "ChatRoomClient_autogen/timestamp"
   "CMakeFiles/ChatRoomClient_autogen.dir/AutogenUsed.txt"

@@ -9,8 +9,6 @@ namespace client {
 class AppManager : public QObject
 {
     Q_OBJECT
-    QML_ELEMENT
-    QML_SINGLETON
 
 public:
     explicit AppManager(QObject *parent = nullptr);
