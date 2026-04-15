@@ -1,0 +1,3 @@
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f CMakeFiles\ChatRoomClient.dir/objects.a
+C:\Qt\Tools\mingw1310_64\bin\ar.exe qc CMakeFiles\ChatRoomClient.dir/objects.a @CMakeFiles\ChatRoomClient.dir\objects1.rsp
+C:\Qt\Tools\mingw1310_64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\ChatRoomClient.dir/objects.a -Wl,--no-whole-archive -o ChatRoomClient.exe -Wl,--out-implib,libChatRoomClient.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ChatRoomClient.dir\linkLibs.rsp

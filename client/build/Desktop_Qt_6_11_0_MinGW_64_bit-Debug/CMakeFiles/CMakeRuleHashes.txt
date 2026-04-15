@@ -1,0 +1,6 @@
+# Hashes of file build rules.
+d0ce52045d7341efba0702c09bf9b16a .qt/qml_imports/ChatRoomClient_build.cmake
+da7f8d24317022d3c952ed2afe986443 CMakeFiles/ChatRoomClient_autogen
+da7f8d24317022d3c952ed2afe986443 CMakeFiles/ChatRoomClient_qmlimportscan
+96690a8aa43d4eab4cd957599c4e5659 ChatRoomClient_autogen/3YJK5W5UP7/qrc_qml.cpp
+a59eaa559dcadd00e490d61911bb8658 ChatRoomClient_autogen/timestamp
