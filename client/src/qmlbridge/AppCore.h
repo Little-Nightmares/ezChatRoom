@@ -2,6 +2,7 @@
 #define APPCORE_H
 
 #include <QObject>
+#include <QtQml/qqmlregistration.h>
 
 
 namespace client {
@@ -9,8 +10,6 @@ namespace client {
 class AppCore : public QObject
 {
     Q_OBJECT
-    QML_ELEMENT
-    QML_SINGLETON
 
 public:
     explicit AppCore(QObject *parent = nullptr);

@@ -2,6 +2,7 @@
 #define FRIENDCONTROLLER_H
 
 #include <QObject>
+#include <QtQml/qqmlregistration.h>
 
 
 namespace client {
@@ -9,8 +10,6 @@ namespace client {
 class FriendController : public QObject
 {
     Q_OBJECT
-    QML_ELEMENT
-    QML_SINGLETON
 
 public:
     explicit FriendController(QObject *parent = nullptr);

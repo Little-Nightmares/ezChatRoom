@@ -1,4 +1,3 @@
-# Prerequisites
 *.d
 
 # Compiled Object files
@@ -30,3 +29,25 @@
 *.exe
 *.out
 *.app
+*.json  # 注意：只保留这一行，不要重复
+
+# ========== 以下是必须添加的 Qt 项目规则 ==========
+# Qt 构建目录
+build/
+Debug/
+Release/
+*.pro.user
+*.pro.user.*
+*.autosave
+
+# Qt Creator 缓存
+.qtc_clangd/
+*.idx
+
+# CMake 缓存
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+

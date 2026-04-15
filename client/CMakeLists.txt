@@ -1,4 +1,3 @@
-cmake_minimum_required(VERSION 3.16)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
@@ -46,7 +45,7 @@ qt_add_executable(ChatRoomClient
     src/qmlbridge/NotificationController.h src/qmlbridge/NotificationController.cpp
 
     # resources
-    resources/qml.qrc
+    qml.qrc
 )
 
 target_include_directories(ChatRoomClient PRIVATE src)
