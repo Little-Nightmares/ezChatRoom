@@ -1,6 +1,0 @@
-set(__QT_DEPLOY_TARGET_ChatRoomClient_FILE D:/PROJECT/ChatRoom/build/Desktop_Qt_6_11_0_MinGW_64_bit-Release/client/ChatRoomClient.exe)
-set(__QT_DEPLOY_TARGET_ChatRoomClient_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_ChatRoomClient_RUNTIME_DLLS C:/Qt/6.11.0/mingw_64/bin/Qt6Quick.dll;C:/Qt/6.11.0/mingw_64/bin/Qt6Sql.dll;C:/Qt/6.11.0/mingw_64/bin/Qt6OpenGL.dll;C:/Qt/6.11.0/mingw_64/bin/Qt6Gui.dll;C:/Qt/6.11.0/mingw_64/bin/Qt6QmlMeta.dll;C:/Qt/6.11.0/mingw_64/bin/Qt6QmlModels.dll;C:/Qt/6.11.0/mingw_64/bin/Qt6QmlWorkerScript.dll;C:/Qt/6.11.0/mingw_64/bin/Qt6Qml.dll;C:/Qt/6.11.0/mingw_64/bin/Qt6Network.dll;C:/Qt/6.11.0/mingw_64/bin/Qt6Core.dll)
-set(__QT_DEPLOY_TARGET_ChatRoomServer_FILE D:/PROJECT/ChatRoom/build/Desktop_Qt_6_11_0_MinGW_64_bit-Release/server/ChatRoomServer.exe)
-set(__QT_DEPLOY_TARGET_ChatRoomServer_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_ChatRoomServer_RUNTIME_DLLS C:/Qt/6.11.0/mingw_64/bin/Qt6Network.dll;C:/Qt/6.11.0/mingw_64/bin/Qt6Sql.dll;C:/Qt/6.11.0/mingw_64/bin/Qt6Concurrent.dll;C:/Qt/6.11.0/mingw_64/bin/Qt6Core.dll)
