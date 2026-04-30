@@ -1,7 +1,7 @@
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Quick Network Sql)
+find_package(Qt6 REQUIRED COMPONENTS Core Quick QuickControls2 Qml Network Sql)
 
 qt_add_executable(ChatRoomClient
     src/main.cpp
@@ -50,5 +50,5 @@ qt_add_executable(ChatRoomClient
 
 target_include_directories(ChatRoomClient PRIVATE src)
 target_link_libraries(ChatRoomClient PRIVATE
-    Qt6::Core Qt6::Quick Qt6::Network Qt6::Sql
+    Qt6::Core Qt6::Quick Qt6::QuickControls2 Qt6::Qml Qt6::Network Qt6::Sql
 )

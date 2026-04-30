@@ -148,7 +148,7 @@ Page // 登录界面的主页面
                         loginLoading.running = false
                         submitMouseArea.enabled = true
                         // 跳转到聊天页面
-                        stackView.push("qrc:/qml/pages/ChatPage.qml")
+                        stackView.push("qrc:/qml/pages/ChatPage.qml") // 跳转到聊天页面
                     }
                 }
                 

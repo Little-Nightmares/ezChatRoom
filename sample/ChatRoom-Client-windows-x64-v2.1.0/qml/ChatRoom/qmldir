@@ -1,0 +1,20 @@
+module ChatRoom
+typeinfo ChatRoomClient.qmltypes
+LoginPage 1.0 qml/pages/LoginPage.qml
+RegisterPage 1.0 qml/pages/RegisterPage.qml
+ChatPage 1.0 qml/pages/ChatPage.qml
+FriendRequestPage 1.0 qml/pages/FriendRequestPage.qml
+SettingsPage 1.0 qml/pages/SettingsPage.qml
+MessageBubble 1.0 qml/components/MessageBubble.qml
+ContactItem 1.0 qml/components/ContactItem.qml
+ConversationItem 1.0 qml/components/ConversationItem.qml
+InputBar 1.0 qml/components/InputBar.qml
+Avatar 1.0 qml/components/Avatar.qml
+SearchBar 1.0 qml/components/SearchBar.qml
+Toast 1.0 qml/components/Toast.qml
+AddFriendDialog 1.0 qml/dialogs/AddFriendDialog.qml
+ConfirmDialog 1.0 qml/dialogs/ConfirmDialog.qml
+CreateGroupDialog 1.0 qml/dialogs/CreateGroupDialog.qml
+GroupInfoDialog 1.0 qml/dialogs/GroupInfoDialog.qml
+GroupMessageBubble 1.0 qml/components/GroupMessageBubble.qml
+GroupConversationItem 1.0 qml/components/GroupConversationItem.qml

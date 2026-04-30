@@ -1,0 +1,11 @@
+singleton ThemeManager 1.0 ThemeManager.qml
+InputBar 1.0 InputBar.qml
+MessageBubble 1.0 MessageBubble.qml
+ContactItem 1.0 ContactItem.qml
+ConversationItem 1.0 ConversationItem.qml
+Avatar 1.0 Avatar.qml
+SearchBar 1.0 SearchBar.qml
+TabBar 1.0 TabBar.qml
+Toast 1.0 Toast.qml
+DialogHelper 1.0 DialogHelper.qml
+ImagePreviewer 1.0 ImagePreviewer.qml

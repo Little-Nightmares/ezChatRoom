@@ -1,0 +1,25 @@
+Qt6::Multimedia not available, sound notifications disabled
+DatabaseManager: tables created/verified
+AppManager: database initialized at "C:/Users/xobby/AppData/Roaming/ChatRoom/ChatRoom/chatroom_client.db"
+AppManager: loaded saved key pair from database
+AppManager: initialized
+AppCore: initialized
+Connecting to server: "127.0.0.1" port: 6667
+TcpClient error: "Connection refused"
+Connecting to server: "127.0.0.1" port: 6667
+TcpClient: connected to server
+UserController: login request sent for user: "yuan"
+AppCore: all offline messages received
+AppCore: all group offline messages received
+SessionManager: login state changed, logged= true userId= 1 username= "yuan"
+UserController: login successful, userId= 1 username= "yuan"
+HeartbeatManager: started (interval: 30000 ms)
+AppCore: login success, starting heartbeat and loading data
+FriendController: friend list request sent
+FriendController: friend request list request sent
+GroupController: group list request sent
+FriendController: received friend list with 0 friends
+FriendController: received 0 friend requests
+GroupController: handleGroupListResponse called
+GroupController: parsing 1 groups
+GroupController: about to call refresh, m_groupModel = 0x235a3db2a80

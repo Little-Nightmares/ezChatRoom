@@ -1,0 +1,11 @@
+CompileFlags:
+  Add:
+    - -std=c++17
+  Remove:
+    - -Wall
+    - -Wextra
+  Compiler: clang
+
+Index:
+  Background: Build
+  StandardLibrary: Yes

@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QtQml/qqmlregistration.h>
+#include <QQuickStyle>
 
 // Bridge 层
 #include "qmlbridge/AppCore.h"
@@ -19,6 +20,10 @@ using namespace client;
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
+
+    // 设置Qt Quick样式为Basic，允许自定义控件
+    QQuickStyle::setStyle("Basic");
+
     QQmlApplicationEngine engine;
 
     // 创建 C++ 对象并注册到 QML
@@ -33,7 +38,7 @@ int main(int argc, char *argv[])
 
     engine.rootContext()->setContextProperty("AppManager", appManager);
     engine.rootContext()->setContextProperty("AppCore", appCore);
-    engine.rootContext()->setContextProperty("ChatController", chatController);
+    engine.rootContext()->setContextProperty("chatController", chatController);
     engine.rootContext()->setContextProperty("UserController", userController);
     engine.rootContext()->setContextProperty("FriendController", friendController);
     engine.rootContext()->setContextProperty("FileTransferController", fileTransferController);
