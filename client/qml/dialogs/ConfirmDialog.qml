@@ -1,12 +1,18 @@
 import QtQuick
 import QtQuick.Controls
-import QtQuick.Layouts
 
 Dialog {
     id: root
     title: qsTr("Confirm")
     modal: true
     anchors.centerIn: parent
+    standardButtons: Dialog.Ok | Dialog.Cancel
 
-    // TODO: 实现对话框
+    property string message: ""
+
+    Label {
+        width: 300
+        text: root.message
+        wrapMode: Text.WordWrap
+    }
 }

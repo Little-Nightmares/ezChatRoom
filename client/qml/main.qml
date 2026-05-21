@@ -8,5 +8,12 @@ ApplicationWindow {
     visible: true
     title: qsTr("ChatRoom")
 
-    // TODO: 实现具体功能
+    minimumWidth: 420
+    minimumHeight: 560
+
+    StackView {
+        id: stackView
+        anchors.fill: parent
+        initialItem: Qt.resolvedUrl("pages/LoginPage.qml")
+    }
 }

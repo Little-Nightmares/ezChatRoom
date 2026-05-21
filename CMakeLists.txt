@@ -7,5 +7,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
+add_subdirectory(common)
 add_subdirectory(client)
 add_subdirectory(server)
