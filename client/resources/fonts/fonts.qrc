@@ -1,0 +1,15 @@
+<RCC>
+  <qresource prefix="/fonts">
+    <file alias="ZCOOLQingKeHuangYou-Regular.ttf">ZCOOLQingKeHuangYou-Regular.ttf</file>
+    <file alias="Caveat-Regular.ttf">Caveat-Regular.ttf</file>
+    <file alias="Caveat-Bold.ttf">Caveat-Bold.ttf</file>
+    <file alias="NotoSansSC-Regular.ttf">NotoSansSC-Regular.ttf</file>
+    <file alias="NotoSansSC-Bold.ttf">NotoSansSC-Bold.ttf</file>
+    <file alias="Inter-Regular.ttf">Inter-Regular.ttf</file>
+    <file alias="Inter-Bold.ttf">Inter-Bold.ttf</file>
+    <file alias="MPLUSRounded1c-Regular.ttf">MPLUSRounded1c-Regular.ttf</file>
+    <file alias="MPLUSRounded1c-Bold.ttf">MPLUSRounded1c-Bold.ttf</file>
+    <file alias="Nunito-Regular.ttf">Nunito-Regular.ttf</file>
+    <file alias="Nunito-Bold.ttf">Nunito-Bold.ttf</file>
+  </qresource>
+</RCC>

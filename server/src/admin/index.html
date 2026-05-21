@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>ChatRoom Admin</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,sans-serif}
+body{display:flex;min-height:100vh;background:#f0f2f5}
+.sidebar{width:200px;background:#001529;color:#fff;padding:16px;min-height:100vh}
+.sidebar h2{font-size:15px;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.sidebar a{display:block;padding:8px 12px;color:rgba(255,255,255,0.65);text-decoration:none;border-radius:4px;margin-bottom:2px;cursor:pointer;font-size:13px}
+.sidebar a:hover,.sidebar a.active{color:#fff;background:#1890ff}
+.main{flex:1;padding:20px}
+.page{display:none}.page.active{display:block}
+.card{background:#fff;border-radius:8px;padding:16px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.stat-box{background:#fff;border-radius:8px;padding:16px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.stat-box .n{font-size:24px;font-weight:bold;color:#1890ff}
+.stat-box .l{font-size:12px;color:#999;margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:8px 10px;border-bottom:1px solid #f0f0f0;text-align:left}
+th{color:#666;font-weight:600}
+.btn{padding:4px 12px;border:none;border-radius:4px;cursor:pointer;font-size:12px}
+.btn-danger{background:#ff4d4f;color:#fff;margin-left:4px}
+.btn-danger:hover{background:#ff7875}
+#login-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999}
+#login-box{background:#fff;border-radius:8px;padding:24px;width:320px}
+#login-box h2{margin-bottom:16px;font-size:16px}
+#login-box input{width:100%;padding:8px 10px;border:1px solid #d9d9d9;border-radius:4px;margin-bottom:10px;font-size:13px}
+#login-box button{width:100%;padding:8px;background:#1890ff;color:#fff;border:none;border-radius:4px;cursor:pointer}
+</style></head><body>
+
+<div id="login-overlay">
+  <div id="login-box">
+    <h2>ChatRoom 管理后台</h2>
+    <input id="token-input" type="password" placeholder="输入 Admin Token">
+    <button onclick="login()">登录</button>
+  </div>
+</div>
+
+<div class="sidebar">
+  <h2>ChatRoom Admin</h2>
+  <a class="active" onclick="showPage('dashboard',this)">📊 概览</a>
+  <a onclick="showPage('users',this)">👥 用户管理</a>
+  <a onclick="showPage('groups',this)">👥 群组管理</a>
+  <a onclick="showPage('messages',this)">💬 消息日志</a>
+  <a onclick="showPage('requests',this)">📨 好友请求</a>
+  <a onclick="showPage('settings',this)">⚙️ 系统设置</a>
+</div>
+
+<div class="main" id="main"></div>
+
+<script>
+let token='';
+async function api(path,method){
+  let r=await fetch(path,{method,headers:{'Authorization':'Bearer '+token}});
+  return r.json();
+}
+// Auto-login from saved token
+(function(){
+  token=localStorage.getItem('admin_token')||'';
+  if(token){document.getElementById('login-overlay').style.display='none';showPage('dashboard',document.querySelector('.sidebar a'));}
+})();
+function login(){
+  token=document.getElementById('token-input').value;
+  localStorage.setItem('admin_token',token);
+  document.getElementById('login-overlay').style.display='none';
+  showPage('dashboard',document.querySelector('.sidebar a'));
+}
+function showPage(name,el){
+  document.querySelectorAll('.sidebar a').forEach(a=>a.classList.remove('active'));
+  if(el)el.classList.add('active');
+  if(name==='dashboard')loadDashboard();
+  else if(name==='users'){if(dashboardTimer)clearInterval(dashboardTimer);loadUsers();}
+  else if(name==='groups'){if(dashboardTimer)clearInterval(dashboardTimer);loadGroups();}
+  else if(name==='messages'){if(dashboardTimer)clearInterval(dashboardTimer);loadMessages();}
+  else if(name==='requests'){if(dashboardTimer)clearInterval(dashboardTimer);loadRequests();}
+  else if(name==='settings'){if(dashboardTimer)clearInterval(dashboardTimer);loadSettings();}
+}
+let dashboardTimer=null;
+async function loadDashboard(){
+  let s=await api('/api/stats');
+  document.getElementById('main').innerHTML='<div class="stats">'+
+    '<div class="stat-box"><div class="n">'+(s.totalUsers||0)+'</div><div class="l">总用户</div></div>'+
+    '<div class="stat-box"><div class="n">'+(s.onlineUsers||0)+'</div><div class="l">在线</div></div>'+
+    '<div class="stat-box"><div class="n">'+(s.totalGroups||0)+'</div><div class="l">群组</div></div>'+
+    '<div class="stat-box"><div class="n">'+((s.totalMessages||0)+(s.totalGroupMessages||0))+'</div><div class="l">消息</div></div>'+
+    '</div>';
+}
+async function loadUsers(){
+  let d=await api('/api/users?limit=100');
+  let h='<div class="card"><h3>用户管理 (共'+(d.total||0)+')</h3><table><tr><th>ID</th><th>用户名</th><th>昵称</th><th>操作</th></tr>';
+  (d.users||[]).forEach(u=>{h+='<tr><td>'+u.userId+'</td><td>'+u.username+'</td><td>'+(u.nickname||'-')+'</td><td><button class="btn btn-danger" onclick="delUser('+u.userId+')">删除</button></td></tr>'});
+  h+='</table></div>'; document.getElementById('main').innerHTML=h;
+}
+async function loadGroups(){
+  let d=await api('/api/groups?limit=100');
+  let h='<div class="card"><h3>群组管理 (共'+(d.total||0)+')</h3><table><tr><th>ID</th><th>名称</th><th>成员</th><th>操作</th></tr>';
+  (d.groups||[]).forEach(g=>{h+='<tr><td>'+g.groupId+'</td><td>'+g.name+'</td><td>'+g.memberCount+'</td><td>'+(g.isDefault?'-':'<button class="btn btn-danger" onclick="delGroup('+g.groupId+')">解散</button>')+'</td></tr>'});
+  h+='</table></div>'; document.getElementById('main').innerHTML=h;
+}
+async function loadMessages(){
+  let d=await api('/api/messages?limit=100');
+  let h='<div class="card"><h3>最近消息</h3><table><tr><th>ID</th><th>发送者</th><th>内容</th><th>时间</th></tr>';
+  (d.messages||[]).forEach(m=>{h+='<tr><td>'+m.messageId+'</td><td>'+(m.senderNickname||'')+'</td><td>'+(m.content||'')+'</td><td>'+(m.timestamp?new Date(m.timestamp*1000).toLocaleString():'')+'</td></tr>'});
+  h+='</table></div>'; document.getElementById('main').innerHTML=h;
+}
+async function loadRequests(){
+  let d=await api('/api/friend-requests?limit=100');
+  let h='<div class="card"><h3>好友请求</h3><table><tr><th>发送方</th><th>接收方</th><th>留言</th><th>状态</th></tr>';
+  (d.requests||[]).forEach(r=>{h+='<tr><td>'+r.fromUserId+'</td><td>'+r.toUserId+'</td><td>'+(r.message||'')+'</td><td>'+(r.status===0?'待处理':r.status===1?'已接受':'已拒绝')+'</td></tr>'});
+  h+='</table></div>'; document.getElementById('main').innerHTML=h;
+}
+async function delUser(id){if(confirm('确定删除用户 '+id+'?')){await api('/api/users/'+id,'DELETE');loadUsers()}}
+async function delGroup(id){if(confirm('确定解散群组 '+id+'?')){await api('/api/groups/'+id,'DELETE');loadGroups()}}
+
+async function loadSettings(){
+  let d=await api('/api/settings/astrbot-url');
+  let k=d.key||'', m=k.length>8?k.substring(0,4)+'****'+k.substring(k.length-4):'';
+  document.getElementById('main').innerHTML='<div class="card"><h3>⚙️ 系统设置</h3>'+
+    '<div style="margin-bottom:16px"><label style="display:block;margin-bottom:6px;font-size:13px;color:#666">🤖 机器人 服务地址</label>'+
+    '<input id="astrbot-url-input" type="password" style="width:100%;padding:8px 10px;border:1px solid #d9d9d9;border-radius:4px;font-size:13px;margin-bottom:8px" placeholder="输入 AstrBot 服务地址">'+
+    '<div style="font-size:12px;color:#999;margin-bottom:8px">当前: '+(k?m:'未设置')+'</div>'+
+    '<button class="btn" style="background:#1890ff;color:#fff" onclick="saveAstrBotUrl()">保存</button>'+
+    '<button class="btn" style="background:#ff4d4f;color:#fff;margin-left:8px" onclick="clearAstrBotUrl()">清除</button></div>'+
+    '<div style="font-size:12px;color:#999;border-top:1px solid #f0f0f0;padding-top:12px">📖 使用说明: 在任意群聊中发送 <b>@bot 你的问题</b> → 消息发给 AstrBot → AstrBot 处理人格/记忆/插件后回复 → 自动推送到群聊</div></div>';
+}
+async function saveAstrBotUrl(){
+  let key=document.getElementById('astrbot-url-input').value;
+  if(!key) return alert('请输入 服务地址');
+  await api('/api/settings/astrbot-url','POST',{key:key});
+  alert('已保存'); loadSettings();
+}
+async function clearAstrBotUrl(){
+  if(!confirm('确定清除 服务地址?')) return;
+  await api('/api/settings/astrbot-url','POST',{key:''});
+  loadSettings();
+}
+</script><div style="margin:20px;background:#f6f8fa;border-radius:8px;padding:16px;font-size:13px;line-height:1.8;font-family:-apple-system,sans-serif"><h3 style="margin-bottom:8px;color:#333">🤖 聊天机器人使用说明</h3><hr style="border:none;border-top:1px solid #e8e8e8;margin:8px 0"><b>1. 安装 AstrBot</b><br>前往 <a href="https://github.com/AstrBot/AstrBot" target="_blank" style="color:#1890ff">github.com/AstrBot/AstrBot</a> 安装并启动<br>默认地址: <code style="background:#e8e8e8;padding:1px 6px;border-radius:3px">http://127.0.0.1:6185</code><br><br><b>2. 配置连接</b><br>在左侧「系统设置」中填写 AstrBot API 地址<br><br><b>3. 使用</b><br>在群聊中输入: <code style="background:#e8e8e8;padding:1px 6px;border-radius:3px">@bot 写一首诗</code><br>Bot 会自动调用 AstrBot 回复<br><br><b>高级功能</b>（在 AstrBot 面板配置）<br>• 人设管理 · 长期记忆 · 插件系统 · 多模型切换<br></div></body></html>
