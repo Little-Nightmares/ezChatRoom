@@ -22,6 +22,8 @@ class GroupController : public QObject {
                NOTIFY isGroupOwnerChanged)
     Q_PROPERTY(int currentGroupMemberCount READ currentGroupMemberCount
                NOTIFY currentGroupMemberCountChanged)
+    Q_PROPERTY(QStringList currentGroupMemberNicknames READ currentGroupMemberNicknames
+               NOTIFY currentGroupMemberNicknamesChanged)
     Q_PROPERTY(QString announcement READ announcement NOTIFY announcementChanged)
 
 public:
@@ -46,6 +48,7 @@ public:
     Q_INVOKABLE void clearCurrentGroup();
     Q_INVOKABLE void requestAnnouncement(quint64 groupId);
     QString announcement() const;
+    QStringList currentGroupMemberNicknames() const;
 
 signals:
     void groupCreated(quint64 groupId, const QString& name);
@@ -62,6 +65,7 @@ signals:
     void currentGroupNameChanged();
     void isGroupOwnerChanged();
     void currentGroupMemberCountChanged();
+    void currentGroupMemberNicknamesChanged();
     void announcementChanged();
 
 private:
@@ -81,6 +85,7 @@ private:
     QString m_currentGroupName;
     bool m_isGroupOwner = false;
     int m_currentGroupMemberCount = 0;
+    QStringList m_currentGroupMemberNicknames;
     QString m_announcement;
 };
 

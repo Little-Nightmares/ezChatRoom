@@ -1,12 +1,109 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import ChatRoom
 
-Dialog {
-    id: root
-    title: qsTr("AddFriend")
-    modal: true
+Popup {
+    id: addFriendDialog
+
+    signal addFriend(var userId, string message)
+
+    width: 350
+    height: 280
     anchors.centerIn: parent
+    modal: true
+    closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
 
-    // TODO: 实现对话框
+    ColumnLayout {
+        anchors.fill: parent
+        anchors.margins: 16
+        spacing: 12
+
+        StyledText {
+            text: "Add Friend"
+            font.pixelSize: 18
+            font.bold: true
+                        color: appCore.themeManager.textPrimary
+        }
+
+        TextField {
+            id: searchField
+            Layout.fillWidth: true
+            placeholderText: "Search by username..."
+            font.pixelSize: 14
+            font.family: appCore.themeManager.fontFamily
+
+            onAccepted: searchButton.clicked()
+        }
+
+        Button {
+            id: searchButton
+            Layout.fillWidth: true
+            text: "Search"
+            font.pixelSize: 14
+
+            onClicked: {
+                appCore.friendController.searchUser(searchField.text)
+            }
+        }
+
+        // Search results
+        ListView {
+            id: searchResults
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            clip: true
+            model: appCore.friendController.userModel
+
+            delegate: Rectangle {
+                width: ListView.view.width
+                height: 48
+                color: index % 2 === 0 ? appCore.themeManager.surface : appCore.themeManager.surfaceAlt
+                radius: 4
+
+                RowLayout {
+                    anchors.fill: parent
+                    anchors.margins: 8
+                    spacing: 8
+
+                    Avatar {
+                        Layout.preferredWidth: 32
+                        Layout.preferredHeight: 32
+                        name: model.nickname || model.username
+                    }
+
+                    StyledText {
+                        text: model.nickname || model.username
+                        font.pixelSize: 14
+            color: appCore.themeManager.textPrimary
+                        Layout.fillWidth: true
+                        elide: Text.ElideRight
+                    }
+
+                    Button {
+                        text: "Add"
+                        implicitHeight: 28
+                        font.pixelSize: 12
+
+                        onClicked: {
+                            addFriendDialog.addFriend(model.userId, "Hi, I'd like to add you as a friend!")
+                        }
+                    }
+                }
+            }
+
+            ScrollBar.vertical: ScrollBar {}
+        }
+    }
+
+    Connections {
+        target: appCore.friendController
+        function onFriendAdded() {
+            appCore.showToast("Friend request sent", "success")
+        }
+    }
+
+    onClosed: {
+        appCore.friendController.requestFriendList()
+    }
 }

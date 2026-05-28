@@ -10,6 +10,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QStringList>
 #include <QFile>
 #include <QDebug>
 #include <QTimer>
@@ -116,6 +117,11 @@ bool GroupController::isGroupOwner() const
 int GroupController::currentGroupMemberCount() const
 {
     return m_currentGroupMemberCount;
+}
+
+QStringList GroupController::currentGroupMemberNicknames() const
+{
+    return m_currentGroupMemberNicknames;
 }
 
 void GroupController::requestGroupList()
@@ -323,11 +329,13 @@ void GroupController::clearCurrentGroup()
     m_currentGroupName.clear();
     m_isGroupOwner = false;
     m_currentGroupMemberCount = 0;
+    m_currentGroupMemberNicknames.clear();
 
     emit currentGroupIdChanged();
     emit currentGroupNameChanged();
     emit isGroupOwnerChanged();
     emit currentGroupMemberCountChanged();
+    emit currentGroupMemberNicknamesChanged();
 }
 
 void GroupController::handleGroupCreateResponse(uint8_t flags, uint32_t sequence,
@@ -439,6 +447,29 @@ void GroupController::handleGroupInfoResponse(uint8_t flags, uint32_t sequence,
         m_currentGroupName = name;
         m_isGroupOwner = (ownerId == m_appManager->sessionManager()->userId());
         m_currentGroupMemberCount = memberCount;
+
+        // Extract member nicknames for @mention autocomplete
+        QStringList nicknames;
+        QJsonArray members = obj["members"].toArray();
+        for (const auto& m : members) {
+            QJsonObject member = m.toObject();
+            QString nickname = member["nickname"].toString();
+            if (nickname.isEmpty()) {
+                nickname = member["username"].toString();
+            }
+            if (!nickname.isEmpty()) {
+                nicknames.append(nickname);
+            }
+        }
+        // Also include the current user
+        QString currentNick = m_appManager->sessionManager()->nickname();
+        if (!currentNick.isEmpty() && !nicknames.contains(currentNick)) {
+            nicknames.append(currentNick);
+        }
+        if (nicknames != m_currentGroupMemberNicknames) {
+            m_currentGroupMemberNicknames = nicknames;
+            emit currentGroupMemberNicknamesChanged();
+        }
 
         emit currentGroupNameChanged();
         emit isGroupOwnerChanged();

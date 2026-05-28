@@ -1,27 +1,27 @@
-#ifndef MESSAGEHANDLER_H
-#define MESSAGEHANDLER_H
+#pragma once
 
 #include <QObject>
+#include <QMap>
+#include <functional>
+#include <cstdint>
 
+namespace chatroom::client {
 
-namespace client {
-
-class MessageHandler : public QObject
-{
+class MessageHandler : public QObject {
     Q_OBJECT
-
 public:
-    explicit MessageHandler(QObject *parent = nullptr);
-    ~MessageHandler() override;
+    using HandlerFunc = std::function<void(uint8_t flags, uint32_t sequence,
+                                            const QByteArray& body)>;
 
-signals:
+    explicit MessageHandler(QObject* parent = nullptr);
 
-public slots:
+    void registerHandler(uint8_t messageType, HandlerFunc handler);
+
+    void handlePacket(uint8_t messageType, uint8_t flags,
+                      uint32_t sequence, const QByteArray& body);
 
 private:
-
+    QMap<uint8_t, HandlerFunc> m_handlers;
 };
 
-} // namespace client
-
-#endif // MESSAGEHANDLER_H
+} // namespace chatroom::client

@@ -1,0 +1,9 @@
+QML debugging is enabled. Only use this in a safe environment.
+qt.sql.qsqlquery: QSqlQuery::prepare: database not open
+qt.multimedia.ffmpeg: Using Qt multimedia with FFmpeg version 7.1.3 LGPL version 2.1 or later
+DatabaseManager: tables created/verified
+AppManager: database initialized at "C:/Users/xobby/AppData/Roaming/ChatRoom/ChatRoom/chatroom_client.db"
+AppManager: loaded saved key pair from database
+AppManager: initialized
+AppCore: initialized
+qt.sql.qsqldatabase: QSqlDatabase requires a QCoreApplication
