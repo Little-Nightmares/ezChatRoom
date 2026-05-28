@@ -1,27 +1,33 @@
-#ifndef HEARTBEATMANAGER_H
-#define HEARTBEATMANAGER_H
+#pragma once
 
 #include <QObject>
 #include <QTimer>
 
-namespace client {
+namespace chatroom::client {
 
-class HeartbeatManager : public QObject
-{
+class TcpClient;
+
+class HeartbeatManager : public QObject {
     Q_OBJECT
-
 public:
-    explicit HeartbeatManager(QObject *parent = nullptr);
-    ~HeartbeatManager() override;
+    explicit HeartbeatManager(TcpClient* tcpClient, QObject* parent = nullptr);
+
+    void start();
+    void stop();
+    void onHeartbeatAckReceived();
 
 signals:
+    void heartbeatTimeout();
 
-public slots:
+private slots:
+    void sendHeartbeat();
 
 private:
-
+    TcpClient* m_tcpClient = nullptr;
+    QTimer* m_timer = nullptr;
+    int m_missedCount = 0;
+    static constexpr int INTERVAL_MS = 30000;   // 30 seconds
+    static constexpr int MAX_MISSES = 3;         // 3 misses = timeout
 };
 
-} // namespace client
-
-#endif // HEARTBEATMANAGER_H
+} // namespace chatroom::client

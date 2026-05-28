@@ -1,40 +1,75 @@
 import QtQuick
 import QtQuick.Controls
+import ChatRoom
 
-Item {
-    id: root
+Rectangle {
+    id: searchBar
 
-    property alias text: field.text
-    property string placeholderText: qsTr("Search")
-    signal accepted(string text)
+    property alias text: input.text
 
-    implicitHeight: 42
+    signal search(string keyword)
 
-    TextField {
-        id: field
+    height: 36
+    radius: 18
+    color: appCore.themeManager.surfaceAlt
+    border.width: input.activeFocus ? 1 : 0
+    border.color: appCore.themeManager.primary
+
+    Row {
         anchors.fill: parent
-        placeholderText: root.placeholderText
-        selectByMouse: true
-        leftPadding: 12
-        rightPadding: clearButton.visible ? 38 : 12
-        onAccepted: root.accepted(text)
+        anchors.leftMargin: 12
+        anchors.rightMargin: 12
+        spacing: 8
 
-        background: Rectangle {
-            radius: 6
-            color: "#f8fafc"
-            border.color: field.activeFocus ? "#2563eb" : "#d9e2ec"
+        StyledText {
+            text: "\u{1F50D}"  // Search icon
+            font.pixelSize: 16
+            anchors.verticalCenter: parent.verticalCenter
+            color: appCore.themeManager.textTertiary
+        }
+
+        TextInput {
+            id: input
+            anchors.verticalCenter: parent.verticalCenter
+            width: parent.width - 40
+            font.pixelSize: 13
+            font.family: appCore.themeManager.fontFamily
+            color: appCore.themeManager.textPrimary
+            selectByMouse: true
+            clip: true
+
+            onTextChanged: {
+                searchBar.search(text)
+            }
         }
     }
 
-    Button {
-        id: clearButton
-        visible: field.text.length > 0
-        anchors.right: parent.right
-        anchors.verticalCenter: parent.verticalCenter
-        width: 32
-        height: 32
-        text: "x"
-        flat: true
-        onClicked: field.text = ""
+    // Clear button
+    Rectangle {
+        visible: input.text.length > 0
+        width: 16
+        height: 16
+        radius: 8
+        color: appCore.themeManager.textTertiary
+        anchors {
+            right: parent.right
+            rightMargin: 10
+            verticalCenter: parent.verticalCenter
+        }
+
+        StyledText {
+            text: "\u00D7"
+            font.pixelSize: 12
+            color: "white"
+            anchors.centerIn: parent
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                input.text = ""
+                input.forceActiveFocus()
+            }
+        }
     }
 }

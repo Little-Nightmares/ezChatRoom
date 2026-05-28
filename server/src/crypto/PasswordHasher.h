@@ -1,26 +1,22 @@
-#ifndef PASSWORDHASHER_H
-#define PASSWORDHASHER_H
+#pragma once
 
-#include <QObject>
+#include <QString>
+#include <QByteArray>
 
+namespace chatroom::server {
 
-namespace server {
-
-class PasswordHasher : public QObject
-{
-    Q_OBJECT
-
+class PasswordHasher {
 public:
-    explicit PasswordHasher(QObject *parent = nullptr);
-    ~PasswordHasher() override;
+    PasswordHasher() = delete;
 
-signals:
+    // Generate password hash: SHA256(salt + password), returns "salt_hex:hash_hex"
+    static QString hashPassword(const QString& password);
 
-public slots:
+    // Verify password against stored hash
+    static bool verifyPassword(const QString& password, const QString& storedHash);
 
 private:
+    static constexpr int SALT_LENGTH = 32;
 };
 
-} // namespace server
-
-#endif // PASSWORDHASHER_H
+} // namespace chatroom::server

@@ -1,64 +1,62 @@
 #include "FriendRequestModel.h"
 
-namespace client {
+namespace chatroom::client {
 
-FriendRequestModel::FriendRequestModel(QObject *parent)
+FriendRequestModel::FriendRequestModel(QObject* parent)
     : QAbstractListModel(parent)
 {
-    m_roles = {
-        {Qt::UserRole + 1, "requestId"},
-        {Qt::UserRole + 2, "userId"},
-        {Qt::UserRole + 3, "username"},
-        {Qt::UserRole + 4, "message"},
-        {Qt::UserRole + 5, "status"},
-        {Qt::UserRole + 6, "createdAt"}
-    };
 }
 
-FriendRequestModel::~FriendRequestModel()
+int FriendRequestModel::rowCount(const QModelIndex& parent) const
 {
-}
-
-int FriendRequestModel::rowCount(const QModelIndex &parent) const
-{
-    if (parent.isValid())
-        return 0;
+    Q_UNUSED(parent)
     return m_requests.size();
 }
 
-QVariant FriendRequestModel::data(const QModelIndex &index, int role) const
+QVariant FriendRequestModel::data(const QModelIndex& index, int role) const
 {
-    if (!index.isValid() || index.row() < 0 || index.row() >= m_requests.size())
-        return QVariant();
+    if (!index.isValid() || index.row() >= m_requests.size()) {
+        return {};
+    }
 
-    const auto roleIt = m_roles.constFind(role);
-    if (roleIt == m_roles.constEnd())
-        return QVariant();
+    const auto& req = m_requests.at(index.row());
 
-    return m_requests.at(index.row()).value(QString::fromUtf8(roleIt.value()));
+    switch (role) {
+    case RequestIdRole:
+        return static_cast<qulonglong>(req.requestId);
+    case FromUserIdRole:
+        return static_cast<qulonglong>(req.fromUserId);
+    case FromUsernameRole:
+        return req.fromUsername;
+    case MessageRole:
+        return req.message;
+    case StatusRole:
+        return static_cast<int>(req.status);
+    default:
+        return {};
+    }
 }
 
 QHash<int, QByteArray> FriendRequestModel::roleNames() const
 {
-    return m_roles;
+    return {
+        {RequestIdRole,    "requestId"},
+        {FromUserIdRole,   "fromUserId"},
+        {FromUsernameRole, "fromUsername"},
+        {MessageRole,      "message"},
+        {StatusRole,       "status"}
+    };
 }
 
-void FriendRequestModel::setRequests(const QVariantList &requests)
+void FriendRequestModel::setRequests(const QVector<chatroom::models::FriendRequest>& requests)
 {
     beginResetModel();
     m_requests.clear();
     m_requests.reserve(requests.size());
-    for (const QVariant &request : requests)
-        m_requests.append(request.toMap());
+    for (const auto& req : requests) {
+        m_requests.append(req);
+    }
     endResetModel();
-}
-
-void FriendRequestModel::appendRequest(const QVariantMap &request)
-{
-    const int row = m_requests.size();
-    beginInsertRows(QModelIndex(), row, row);
-    m_requests.append(request);
-    endInsertRows();
 }
 
 void FriendRequestModel::clear()
@@ -68,4 +66,4 @@ void FriendRequestModel::clear()
     endResetModel();
 }
 
-} // namespace client
+} // namespace chatroom::client

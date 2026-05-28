@@ -1,36 +1,63 @@
-#ifndef CONVERSATIONMODEL_H
-#define CONVERSATIONMODEL_H
+#pragma once
 
 #include <QAbstractListModel>
-#include <QVariantList>
-#include <QVariantMap>
-#include <QVector>
+#include <QList>
+#include <QDateTime>
+#include <cstdint>
+#include <QtQml/qqml.h>
 
-namespace client {
+namespace chatroom::client {
 
-class ConversationModel : public QAbstractListModel
-{
+class ConversationModel : public QAbstractListModel {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
-    explicit ConversationModel(QObject *parent = nullptr);
-    ~ConversationModel() override;
+    struct ConversationData {
+        uint64_t    friendId = 0;
+        QString     nickname;
+        QString     avatar;
+        QString     lastMessage;
+        QDateTime   lastTime;
+        int         unreadCount = 0;
+        uint64_t    groupId = 0;
+        bool        isGroup = false;
+    };
+
+    enum Roles {
+        FriendIdRole = Qt::UserRole + 1,
+        NicknameRole,
+        AvatarRole,
+        LastMessageRole,
+        LastTimeRole,
+        UnreadCountRole,
+        GroupIdRole,
+        IsGroupRole
+    };
+    Q_ENUM(Roles)
+
+    explicit ConversationModel(QObject* parent = nullptr);
 
     // QAbstractListModel interface
-    int rowCount(const QModelIndex &parent = QModelIndex()) const override;
-    QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
+    QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-public slots:
-    void setConversations(const QVariantList &conversations);
-    void appendConversation(const QVariantMap &conversation);
-    void clear();
+    Q_INVOKABLE void refresh(const QVector<ConversationData>& conversations);
+    Q_INVOKABLE void updateConversation(uint64_t friendId, const QString& lastMessage,
+                                         const QDateTime& lastTime, int unreadDelta = 0);
+    Q_INVOKABLE void clear();
+    Q_INVOKABLE void clearUnreadCount(uint64_t friendId);
 
-protected:
-    QHash<int, QByteArray> m_roles;
-    QVector<QVariantMap> m_conversations;
+    Q_INVOKABLE void updateGroupConversation(uint64_t groupId, const QString& nickname, const QString& avatar,
+                                               const QString& lastMessage, const QDateTime& lastTime, int unreadDelta = 0);
+    Q_INVOKABLE void removeGroupConversation(uint64_t groupId);
+    int findIndexByGroupId(uint64_t groupId) const;
+
+    int findIndexByFriendId(uint64_t friendId) const;
+
+private:
+    QList<ConversationData> m_conversations;
 };
 
-} // namespace client
-
-#endif // CONVERSATIONMODEL_H
+} // namespace chatroom::client

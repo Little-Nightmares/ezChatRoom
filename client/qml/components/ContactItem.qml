@@ -1,73 +1,76 @@
 import QtQuick
-import QtQuick.Controls
-import QtQuick.Layouts
+import ChatRoom
 
-Item {
-    id: root
+Rectangle {
+    id: contactItem
 
-    property string displayName: ""
-    property string subtitle: ""
-    property string avatarUrl: ""
-    property bool online: false
+    property int userId: 0
+    property alias nickname: nicknameText.text
+    property alias username: usernameText.text
+    property alias avatar: avatarComp.name
+    property bool isOnline: false
     property bool selected: false
 
     signal clicked()
 
-    implicitHeight: 64
-    width: parent ? parent.width : 280
+    width: parent ? parent.width : 200
+    height: 60
+    color: selected ? appCore.themeManager.tabHoverBg : (mouseArea.containsMouse ? appCore.themeManager.surfaceAlt : "transparent")
 
-    Rectangle {
-        anchors.fill: parent
-        radius: 6
-        color: root.selected ? "#e0ecff" : (mouseArea.containsMouse ? "#f3f6fb" : "transparent")
-    }
-
-    RowLayout {
+    Row {
         anchors.fill: parent
         anchors.leftMargin: 12
         anchors.rightMargin: 12
         spacing: 10
 
         Avatar {
-            Layout.preferredWidth: 42
-            Layout.preferredHeight: 42
-            name: root.displayName
-            imageUrl: root.avatarUrl
+            id: avatarComp
+            width: 40
+            height: 40
+            anchors.verticalCenter: parent.verticalCenter
+            showOnlineIndicator: true
+            online: contactItem.isOnline
         }
 
-        ColumnLayout {
-            Layout.fillWidth: true
+        Column {
+            anchors.verticalCenter: parent.verticalCenter
             spacing: 2
 
-            Label {
-                text: root.displayName
-                color: "#1f2937"
+            StyledText {
+                id: nicknameText
+                text: ""
+                font.pixelSize: 14
                 font.bold: true
+                color: appCore.themeManager.textPrimary
                 elide: Text.ElideRight
-                Layout.fillWidth: true
+                width: contactItem.width - 80
             }
 
-            Label {
-                text: root.subtitle
-                color: "#6b7280"
+            StyledText {
+                id: usernameText
+                text: ""
                 font.pixelSize: 12
+                color: appCore.themeManager.textTertiary
                 elide: Text.ElideRight
-                Layout.fillWidth: true
+                width: contactItem.width - 80
             }
         }
+    }
 
-        Rectangle {
-            Layout.preferredWidth: 10
-            Layout.preferredHeight: 10
-            radius: 5
-            color: root.online ? "#16a34a" : "#cbd5e1"
-        }
+    // Bottom divider
+    Rectangle {
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.leftMargin: 62
+        height: 1
+        color: appCore.themeManager.divider
     }
 
     MouseArea {
         id: mouseArea
         anchors.fill: parent
         hoverEnabled: true
-        onClicked: root.clicked()
+        onClicked: contactItem.clicked()
     }
 }

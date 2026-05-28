@@ -13,11 +13,7 @@ echo "[1/5] 安装编译依赖..."
 sudo apt update
 sudo apt install -y build-essential cmake pkg-config \
     qt6-base-dev qt6-webengine-dev qt6-multimedia-dev \
-    libqt6sql6-sqlite libssl-dev libgl1-mesa-dev \
-    qml6-module-qtquick qml6-module-qtquick-controls \
-    qml6-module-qtquick-layouts qml6-module-qtquick-window \
-    qml6-module-qtqml qml6-module-qtqml-models \
-    qml6-module-qtqml-workerscript qml6-module-qtquick-templates
+    libqt6sql6-sqlite libssl-dev libgl1-mesa-dev
 
 # 2. 创建构建目录
 echo "[2/5] 创建构建目录..."
@@ -34,22 +30,20 @@ cmake -DCMAKE_BUILD_TYPE=Release \
 echo "[4/5] 编译..."
 NPROC=$(nproc)
 make -j$NPROC ChatRoomServer ChatRoomClient
-SERVER_BIN="$(realpath server/ChatRoomServer)"
-CLIENT_BIN="$(realpath client/ChatRoomClient)"
-echo "  ✓ 服务端: $SERVER_BIN"
-echo "  ✓ 客户端: $CLIENT_BIN"
+echo "  ✓ 服务端: $(realpath ChatRoomServer)"
+echo "  ✓ 客户端: $(realpath ChatRoomClient)"
 
 # 5. 打包
 echo "[5/5] 打包..."
 mkdir -p ChatRoom-Package/server ChatRoom-Package/client
 
 # 复制二进制
-cp "$SERVER_BIN" ChatRoom-Package/server/
-cp "$CLIENT_BIN" ChatRoom-Package/client/
+cp ChatRoomServer ChatRoom-Package/server/
+cp ChatRoomClient ChatRoom-Package/client/
 
 # 复制 OpenSSL 库
-ldd "$SERVER_BIN" 2>/dev/null | grep -i ssl | awk '{print $3}' | xargs -I{} cp {} ChatRoom-Package/server/ 2>/dev/null || true
-ldd "$CLIENT_BIN" 2>/dev/null | grep -i ssl | awk '{print $3}' | xargs -I{} cp {} ChatRoom-Package/client/ 2>/dev/null || true
+ldd ChatRoomServer 2>/dev/null | grep -i ssl | awk '{print $3}' | xargs -I{} cp {} ChatRoom-Package/server/ 2>/dev/null || true
+ldd ChatRoomClient 2>/dev/null | grep -i ssl | awk '{print $3}' | xargs -I{} cp {} ChatRoom-Package/client/ 2>/dev/null || true
 
 # 复制 admin.token（若存在）
 cp ../../admin.token ChatRoom-Package/server/ 2>/dev/null || echo "  ⚠ admin.token 未找到"

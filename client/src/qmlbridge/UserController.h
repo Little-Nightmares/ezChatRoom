@@ -1,40 +1,36 @@
-#ifndef USERCONTROLLER_H
-#define USERCONTROLLER_H
+#pragma once
 
 #include <QObject>
-#include <QString>
-#include <QtQml/qqmlregistration.h>
+#include <QtQml/qqml.h>
 
-namespace client {
+namespace chatroom::client {
 
-class TcpClient;
+class AppManager;
 
-class UserController : public QObject
-{
+class UserController : public QObject {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("UserController is created by AppCore and exposed to QML as a context property")
 
 public:
-    explicit UserController(QObject *parent = nullptr);
-    ~UserController() override;
+    explicit UserController(AppManager* appManager, QObject* parent = nullptr);
+
+    Q_INVOKABLE void login(const QString& username, const QString& password);
+    Q_INVOKABLE void registerUser(const QString& username, const QString& password,
+                                  const QString& nickname);
+    Q_INVOKABLE void logout();
 
 signals:
-    void loginStarted(const QString &username, const QString &host, int port);
-    void loginFailed(const QString &message);
-    void serverConnected();
-    void serverDisconnected();
-    void logoutRequested();
-
-public slots:
-    void login(const QString &username,
-               const QString &password,
-               const QString &host,
-               int port);
-    void logout();
+    void loginSuccess();
+    void loginFailed(const QString& reason);
+    void registerSuccess();
+    void registerFailed(const QString& reason);
 
 private:
-    TcpClient *m_client = nullptr;
+    void handleLoginResponse(uint8_t flags, uint32_t sequence, const QByteArray& body);
+    void handleRegisterResponse(uint8_t flags, uint32_t sequence, const QByteArray& body);
+
+    AppManager* m_appManager = nullptr;
 };
 
-} // namespace client
-
-#endif // USERCONTROLLER_H
+} // namespace chatroom::client

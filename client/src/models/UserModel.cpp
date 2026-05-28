@@ -1,63 +1,62 @@
 #include "UserModel.h"
 
-namespace client {
+namespace chatroom::client {
 
-UserModel::UserModel(QObject *parent)
+UserModel::UserModel(QObject* parent)
     : QAbstractListModel(parent)
 {
-    m_roles = {
-        {Qt::UserRole + 1, "userId"},
-        {Qt::UserRole + 2, "username"},
-        {Qt::UserRole + 3, "displayName"},
-        {Qt::UserRole + 4, "avatarUrl"},
-        {Qt::UserRole + 5, "online"}
-    };
 }
 
-UserModel::~UserModel()
+int UserModel::rowCount(const QModelIndex& parent) const
 {
-}
-
-int UserModel::rowCount(const QModelIndex &parent) const
-{
-    if (parent.isValid())
-        return 0;
+    Q_UNUSED(parent)
     return m_users.size();
 }
 
-QVariant UserModel::data(const QModelIndex &index, int role) const
+QVariant UserModel::data(const QModelIndex& index, int role) const
 {
-    if (!index.isValid() || index.row() < 0 || index.row() >= m_users.size())
-        return QVariant();
+    if (!index.isValid() || index.row() >= m_users.size()) {
+        return {};
+    }
 
-    const auto roleIt = m_roles.constFind(role);
-    if (roleIt == m_roles.constEnd())
-        return QVariant();
+    const auto& user = m_users.at(index.row());
 
-    return m_users.at(index.row()).value(QString::fromUtf8(roleIt.value()));
+    switch (role) {
+    case UserIdRole:
+        return static_cast<qulonglong>(user.userId);
+    case UsernameRole:
+        return user.username;
+    case NicknameRole:
+        return user.nickname;
+    case AvatarRole:
+        return user.avatar;
+    case IsOnlineRole:
+        return user.isOnline;
+    default:
+        return {};
+    }
 }
 
 QHash<int, QByteArray> UserModel::roleNames() const
 {
-    return m_roles;
+    return {
+        {UserIdRole,   "userId"},
+        {UsernameRole, "username"},
+        {NicknameRole, "nickname"},
+        {AvatarRole,   "avatar"},
+        {IsOnlineRole, "isOnline"}
+    };
 }
 
-void UserModel::setUsers(const QVariantList &users)
+void UserModel::setUsers(const QVector<chatroom::models::UserInfo>& users)
 {
     beginResetModel();
     m_users.clear();
     m_users.reserve(users.size());
-    for (const QVariant &user : users)
-        m_users.append(user.toMap());
+    for (const auto& user : users) {
+        m_users.append(user);
+    }
     endResetModel();
-}
-
-void UserModel::appendUser(const QVariantMap &user)
-{
-    const int row = m_users.size();
-    beginInsertRows(QModelIndex(), row, row);
-    m_users.append(user);
-    endInsertRows();
 }
 
 void UserModel::clear()
@@ -67,4 +66,26 @@ void UserModel::clear()
     endResetModel();
 }
 
-} // namespace client
+void UserModel::updateOnlineStatus(uint64_t userId, bool online)
+{
+    for (int i = 0; i < m_users.size(); ++i) {
+        if (m_users[i].userId == userId) {
+            m_users[i].isOnline = online;
+            QModelIndex idx = index(i, 0);
+            emit dataChanged(idx, idx, {IsOnlineRole});
+            return;
+        }
+    }
+}
+
+bool UserModel::isOnline(uint64_t userId) const
+{
+    for (const auto& u : m_users) {
+        if (u.userId == userId) {
+            return u.isOnline;
+        }
+    }
+    return false;
+}
+
+} // namespace chatroom::client
