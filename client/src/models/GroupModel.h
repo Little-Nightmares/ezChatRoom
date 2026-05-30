@@ -50,6 +50,7 @@ public:
     Q_INVOKABLE void removeGroup(uint64_t groupId);
     Q_INVOKABLE void clear();
     Q_INVOKABLE void clearUnreadCount(uint64_t groupId);
+    const QList<GroupItemData>& groups() const { return m_groups; }
 
     int findIndexByGroupId(uint64_t groupId) const;
 

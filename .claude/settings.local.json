@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where cmake *)",
+      "Read(//d//**)"
+    ]
+  }
+}

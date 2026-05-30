@@ -67,6 +67,7 @@ signals:
     void currentGroupMemberCountChanged();
     void currentGroupMemberNicknamesChanged();
     void announcementChanged();
+    void atMentionReceived(const QString& senderNickname, quint64 groupId, const QString& groupName);
 
 private:
     void handleGroupCreateResponse(uint8_t flags, uint32_t sequence, const QByteArray& body);

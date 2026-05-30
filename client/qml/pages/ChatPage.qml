@@ -897,11 +897,19 @@ Page {
                     onClicked: {
                         var friendId = appCore.chatController.currentChatFriendId
                         appCore.friendController.deleteFriend(friendId)
+                        appCore.friendController.requestFriendList()
                         appCore.chatController.clearCurrentChat()
                         deleteFriendDialog.close()
                     }
                 }
             }
+        }
+    }
+
+    Connections {
+        target: appCore.groupController
+        function onAtMentionReceived(senderNickname, groupId, groupName) {
+            globalToast.show(senderNickname + " 在 " + groupName + " 中@了你", "info")
         }
     }
 

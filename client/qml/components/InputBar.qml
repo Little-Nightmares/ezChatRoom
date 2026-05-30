@@ -170,7 +170,7 @@ Rectangle {
                 closePolicy: Popup.NoAutoClose
                 visible: atMentionActive && filteredMembers.length > 0
 
-                property var allMembers: inputBar.getMemberNames()
+                property var allMembers: atMentionActive ? inputBar.getMemberNames() : []
 
                 property var filteredMembers: {
                     if (!atMentionActive) return []

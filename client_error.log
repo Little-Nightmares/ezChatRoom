@@ -6,4 +6,192 @@ AppManager: database initialized at "C:/Users/xobby/AppData/Roaming/ChatRoom/Cha
 AppManager: loaded saved key pair from database
 AppManager: initialized
 AppCore: initialized
-qt.sql.qsqldatabase: QSqlDatabase requires a QCoreApplication
+Connecting to server: "38.76.215.197" port: 6667
+TcpClient: connected to server
+UserController: login request sent for user: "yuan"
+AppCore: all offline messages received
+AppCore: all group offline messages received
+SessionManager: login state changed, logged= true userId= 2 username= "yuan"
+UserController: login successful, userId= 2 username= "yuan"
+HeartbeatManager: started (interval: 30000 ms)
+AppCore: login success, starting heartbeat and loading data
+FriendController: friend list request sent
+FriendController: friend request list request sent
+GroupController: group list request sent
+FriendController: received friend list with 0 friends
+FriendController: received 0 friend requests
+GroupController: handleGroupListResponse called
+GroupController: parsing 1 groups
+GroupController: about to call refresh, m_groupModel = 0x2380a2cf8d0
+GroupController: group list received, 1 groups
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+qt.qpa.mime: Retrying to obtain clipboard.
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+qt.qpa.mime: Retrying to obtain clipboard.
+qt.qpa.mime: Retrying to obtain clipboard.
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+qt.qpa.mime: Retrying to obtain clipboard.
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+qt.qpa.mime: Retrying to obtain clipboard.
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count
+HeartbeatManager: sent heartbeat, missed count: 1
+HeartbeatManager: heartbeat ack received, reset missed count

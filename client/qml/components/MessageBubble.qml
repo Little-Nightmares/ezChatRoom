@@ -52,14 +52,29 @@ Item {
                     width: Math.min(320, Math.max(bubbleText.implicitWidth + 12, 60))
                     height: bubbleText.implicitHeight + 12
 
-                    StyledText {
+                    TextEdit {
                         id: bubbleText
                         anchors.centerIn: parent
                         width: parent.width - 12
-                        text: bubble.content
                         font.pixelSize: 14
+                        font.family: appCore.themeManager.fontFamily
                         color: isMine ? appCore.themeManager.bubbleMineText : appCore.themeManager.bubbleOtherText
                         wrapMode: Text.WrapAnywhere
+                        readOnly: true
+                        selectByMouse: false
+                        textFormat: TextEdit.RichText
+
+                        function highlightMentions(plainText) {
+                            var html = plainText.replace(/@([\w\u4e00-\u9fff\-]+)/g,
+                                '<span style="color: #1890ff; font-weight: bold;">@$1</span>')
+                            html = html.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                            html = html.replace(/&lt;span style=&quot;color: #1890ff; font-weight: bold;&quot;&gt;@/g,
+                                '<span style="color: #1890ff; font-weight: bold;">@')
+                            html = html.replace(/&lt;\/span&gt;/g, '</span>')
+                            return html
+                        }
+
+                        text: highlightMentions(bubble.content)
                     }
                 }
 

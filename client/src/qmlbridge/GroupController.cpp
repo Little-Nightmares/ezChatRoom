@@ -97,6 +97,35 @@ GroupController::GroupController(AppManager* appManager, GroupModel* groupModel,
                 emit announcementChanged();
             }
         });
+
+    // Handle @mention notifications in group chats
+    uint8_t atNotifyType = static_cast<uint8_t>(
+        chatroom::protocol::MessageType::GroupAtNotify);
+    handler->registerHandler(atNotifyType,
+        [this](uint8_t, uint32_t, const QByteArray& body) {
+            QJsonDocument doc = QJsonDocument::fromJson(body);
+            if (doc.isObject()) {
+                QJsonObject obj = doc.object();
+                QString senderNickname = obj["senderNickname"].toString();
+                quint64 groupId = static_cast<quint64>(obj["groupId"].toInteger(0));
+                QString groupName;
+
+                // Look up group name from model
+                if (m_groupModel) {
+                    auto groups = m_groupModel->groups();
+                    for (const auto& g : groups) {
+                        if (g.groupId == groupId) {
+                            groupName = g.name;
+                            break;
+                        }
+                    }
+                }
+                if (groupName.isEmpty()) groupName = QStringLiteral("群组");
+
+                qDebug() << "GroupAtNotify: user" << senderNickname << "mentioned you in" << groupName;
+                emit atMentionReceived(senderNickname, groupId, groupName);
+            }
+        });
 }
 
 quint64 GroupController::currentGroupId() const

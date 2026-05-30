@@ -19,13 +19,12 @@ if(WIN32)
     set(OPENSSL_ROOT_DIR "D:/PROJECT/CCchatroom/openssl")
     set(OPENSSL_INCLUDE_DIR "C:/Program Files/OpenSSL-Win64/include")
 endif()
-find_package(Qt6 REQUIRED COMPONENTS Core Network Sql Quick Gui)
+find_package(Qt6 REQUIRED COMPONENTS Core Network Sql)
 find_package(OpenSSL REQUIRED COMPONENTS Crypto)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
 add_subdirectory(common)
-add_subdirectory(client)
 add_subdirectory(server)
 
 
